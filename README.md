@@ -302,3 +302,43 @@ nvidia-ml-py、polars 和 ultralytics-platform。
 
 其中 data/Robot_test.mp4 用于运行推理和测速；
 results 下的两个视频用于查看已生成的检测效果。
+
+## 13. 安装依赖
+
+以下为 Windows PowerShell 命令，需要先安装 Python 3.11。
+下载项目并进入项目根目录后，创建独立虚拟环境：
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install --upgrade pip
+```
+
+从 PyTorch 官方 CUDA 13.2 软件源安装本次实验使用的版本：
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install torch==2.14.1+cu132 torchvision==0.29.1+cu132 --index-url https://download.pytorch.org/whl/cu132
+```
+
+再安装其余依赖并检查依赖关系：
+
+```powershell
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m pip check
+```
+
+下载第 12 节的视频附件并解压到项目根目录后，可运行：
+
+```powershell
+.\.venv\Scripts\python.exe export.py
+.\.venv\Scripts\python.exe inference.py
+.\.venv\Scripts\python.exe inference_pt.py
+.\.venv\Scripts\python.exe benchmark.py
+.\.venv\Scripts\python.exe compare_images.py
+```
+
+本次脚本使用 CPU 推理。虽然安装的是 CUDA 构建，
+执行这些 CPU 实验不要求配备 NVIDIA GPU。
+
+已核实官方源提供上述 PyTorch 和 torchvision 版本；
+本项目已在所记录的实验环境运行成功，
+尚未完成全新环境中的完整安装验证。
