@@ -287,3 +287,18 @@ nvidia-ml-py、polars 和 ultralytics-platform。
         │   └── frame_250.jpg
         ├── benchmark_summary.csv
         └── benchmark_raw.csv
+
+## 12. 视频下载
+
+原始测试视频与两种模型的推理结果视频已提供下载：
+
+[下载 videos.zip](https://github.com/JXZY6767/YOLO-Export-Inference/releases/download/v1.0/videos.zip)
+
+下载后解压到项目根目录，保留以下目录结构：
+
+    data/Robot_test.mp4
+    results/pt/Robot_test.avi
+    results/torchscript/Robot_test.avi
+
+其中 data/Robot_test.mp4 用于运行推理和测速；
+results 下的两个视频用于查看已生成的检测效果。
