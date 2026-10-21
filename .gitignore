@@ -1,0 +1,13 @@
+# PyCharm 本地配置
+.idea/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 虚拟环境
+.venv/
+venv/
+
+# Windows 缩略图缓存
+Thumbs.db
